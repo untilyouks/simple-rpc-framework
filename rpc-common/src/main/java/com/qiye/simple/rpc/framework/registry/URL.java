@@ -50,11 +50,7 @@ public final class URL implements Serializable {
         this.parameters = null;
     }
 
-    public URL(String protocol, String username, String password, String host, int port, String path, Map<String, String> parameters) {
-        if ((username == null || username.length() == 0)
-                && password != null && password.length() > 0) {
-            throw new IllegalArgumentException("Invalid url, password without username!");
-        }
+    public URL(String protocol, String host, int port, String path, Map<String, String> parameters) {
         this.protocol = protocol;
         this.host = host;
         this.port = (port < 0 ? 0 : port);
